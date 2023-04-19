@@ -4,6 +4,8 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import mainImage from '@/assets/images/ai-image.jpeg'
 
+import TypedText from '@/components/TypedText/TypedText';
+
 export default function Home() {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
@@ -11,18 +13,18 @@ export default function Home() {
 
   const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // prevent from refresh of page
-    // const formData = new FormData( e.target);
     const formData = new FormData(e.target as HTMLFormElement);
     const prompt = formData.get('prompt')?.toString().trim(); // remove whitespace
-    console.log('submit: ', prompt)
 
     if( prompt ) {
+      // setResult( prompt)
+
+
       try {
         setResult('')
         setLoading( true );
         setError( false );
-        
-        // const response = await fetch('/api/open-ai?prompt=' + encodeURIComponent(prompt))
+
         const response = await fetch(`/api/open-ai?prompt=${encodeURIComponent(prompt)}`);
         const body = await response.json();
         setResult(body.quote);
@@ -45,7 +47,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>JW AI</h1>
-        <h2>Powered by OpenAI</h2>
         <div className={styles.mainImageContainer}>
           <Image
             src={mainImage}
@@ -56,24 +57,35 @@ export default function Home() {
           />
         </div>
 
-        <form onSubmit={handleSubmit} className={styles.inputForm}>
-          <label>Type to ask a question...</label>
-          <input 
-            name='prompt'
-            placeholder='e.g. why is the sun hot'
-            maxLength={100}
-          />
-          <button 
-            type='submit'
-            disabled={loading}
-          >
-            Submit
-          </button>
-        </form>
+        <div className={styles.lowerContainer}>
+          <form onSubmit={handleSubmit} className={styles.inputForm}>
+            <label>Ask a question...</label>
+            <input 
+              name='prompt'
+              placeholder='e.g. why is the sun hot'
+              maxLength={100}
+              autoComplete='off'
+            />
+            <button 
+              type='submit'
+              disabled={loading}
+            >
+              Submit
+            </button>
+          </form>
         
-        {loading && <div>loading</div>}
-        {error && <div>Something went wrong. Please try again.</div>}
-        { result && <h5>{result}</h5>}
+        
+          {loading && <div>loading</div>}
+          {error && <div>Something went wrong. Please try again.</div>}
+          {/* { result && <h5>{result}</h5>} */}
+
+          {result && (
+            <h4>
+              <TypedText textStr={result} delay={100}/>
+            </h4>
+          )}
+
+        </div>
 
       </main>
     </>

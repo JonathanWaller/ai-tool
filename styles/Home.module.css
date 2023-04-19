@@ -26,4 +26,13 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 25px;
+}
+
+.lowerContainer {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 50px;
 }
