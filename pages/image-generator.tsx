@@ -2,9 +2,10 @@ import {FormEvent, useState} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import mainImage from '@/assets/images/ai-image.jpeg'
+import mainImage from '@/assets/images/space-2.jpeg'
 
-import TypedText from '@/components/TypedText/TypedText';
+import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 const ImageGenerator = () => {
   const [result, setResult] = useState('');
@@ -45,6 +46,16 @@ const ImageGenerator = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.pageContainer}>
+        <div className={styles.bannerImageContainer}>
+          <Image
+              src={mainImage}
+              fill // will fill the container
+              alt='main img'
+              priority
+              className={styles.mainImage}
+            />
+        </div>
       <main className={styles.main}>
         <h1>JW AI</h1>
         <div className={styles.mainImageContainer}>
@@ -60,18 +71,8 @@ const ImageGenerator = () => {
         <div className={styles.lowerContainer}>
           <form onSubmit={handleSubmit} className={styles.inputForm}>
             <label>Enter a topic...</label>
-            <input 
-              name='prompt'
-              placeholder='e.g. baby seal'
-              maxLength={100}
-              autoComplete='off'
-            />
-            <button 
-              type='submit'
-              disabled={loading}
-            >
-              Submit
-            </button>
+            <Input placeholder='e.g. baby seal'name='prompt'/>
+            <Button disabled={loading}>Submit</Button>
           </form>
         
         
@@ -94,6 +95,7 @@ const ImageGenerator = () => {
         </div>
 
       </main>
+      </div>
     </>
   )
 }

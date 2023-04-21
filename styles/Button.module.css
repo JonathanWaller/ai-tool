@@ -1,0 +1,39 @@
+
+.btn {
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.12);
+    background-color: #1A1F36;
+    color: #FFFFFF;
+
+    transition: background-color ease-in-out 150ms;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    font-feature-settings: 'liga' off;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #42475A;
+    text-decoration: underline;
+}
+
+.btn:disabled {
+    background-color: rgba(60, 66, 87, 0.06);
+    color: #697386;
+
+}
+
+.btn:disabled:hover {
+    cursor: not-allowed;
+}

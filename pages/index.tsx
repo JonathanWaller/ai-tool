@@ -4,6 +4,8 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import mainImage from '@/assets/images/ai-image.jpeg'
 
+import Link from 'next/link';
+
 import TypedText from '@/components/TypedText/TypedText';
 
 export default function Home() {
@@ -37,57 +39,80 @@ export default function Home() {
     }
   }
 
+  // return (
+  //   <>
+  //     <Head>
+  //       <title>JW AI</title>
+  //       <meta name="description" content="by Jonathan Waller" />
+  //       <meta name="viewport" content="width=device-width, initial-scale=1" />
+  //       <link rel="icon" href="/favicon.ico" />
+  //     </Head>
+  //     <main className={styles.main}>
+  //       <h1>JW AI</h1>
+  //       <div className={styles.mainImageContainer}>
+  //         <Image
+  //           src={mainImage}
+  //           fill // will fill the container
+  //           alt='main img'
+  //           priority
+  //           className={styles.mainImage}
+  //         />
+  //       </div>
+
+  //       <div className={styles.lowerContainer}>
+  //         <form onSubmit={handleSubmit} className={styles.inputForm}>
+  //           <label>Ask a question...</label>
+  //           <input 
+  //             name='prompt'
+  //             placeholder='e.g. why is the sun hot'
+  //             maxLength={100}
+  //             autoComplete='off'
+  //           />
+  //           <button 
+  //             type='submit'
+  //             disabled={loading}
+  //           >
+  //             Submit
+  //           </button>
+  //         </form>
+        
+        
+  //         {loading && <div>loading</div>}
+  //         {error && <div>Something went wrong. Please try again.</div>}
+  //         {/* { result && <h5>{result}</h5>} */}
+
+  //         {result && (
+  //           <h4>
+  //             <TypedText textStr={result} delay={100}/>
+  //           </h4>
+  //         )}
+
+  //       </div>
+
+  //     </main>
+  //   </>
+  // )
+
+  // return(
+  //   <div className={styles.outerContainer}>
+  //   <div className={styles.container}>
+  //     <div className={styles.gradient}>
+  //     PURE CSS GLOWING GRADIENT BORDER
+  //     </div>
+  //   </div>
+  //   </div>
+  // )
+
   return (
-    <>
-      <Head>
-        <title>JW AI</title>
-        <meta name="description" content="by Jonathan Waller" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className={styles.main}>
-        <h1>JW AI</h1>
-        <div className={styles.mainImageContainer}>
-          <Image
-            src={mainImage}
-            fill // will fill the container
-            alt='main img'
-            priority
-            className={styles.mainImage}
-          />
-        </div>
-
-        <div className={styles.lowerContainer}>
-          <form onSubmit={handleSubmit} className={styles.inputForm}>
-            <label>Ask a question...</label>
-            <input 
-              name='prompt'
-              placeholder='e.g. why is the sun hot'
-              maxLength={100}
-              autoComplete='off'
-            />
-            <button 
-              type='submit'
-              disabled={loading}
-            >
-              Submit
-            </button>
-          </form>
-        
-        
-          {loading && <div>loading</div>}
-          {error && <div>Something went wrong. Please try again.</div>}
-          {/* { result && <h5>{result}</h5>} */}
-
-          {result && (
-            <h4>
-              <TypedText textStr={result} delay={100}/>
-            </h4>
-          )}
-
-        </div>
-
-      </main>
-    </>
+    <div className={styles.glowContainer}>
+      <Link href={'/chat-response'}>
+      <button className={styles.glowingBtn}>
+        <span className={styles.glowingTxt}>
+          E
+        <span className={styles.faultyLetter}>
+          N</span>TER</span>
+      </button>
+      </Link>
+    </div>
   )
 }
