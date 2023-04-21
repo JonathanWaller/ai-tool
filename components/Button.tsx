@@ -6,16 +6,17 @@ interface GWButtonProps {
     children: React.ReactNode;
     type?: 'primary' |  'danger';
     disabled?: boolean;
-    onClick?: () => void;
+    onClick?: (e?: any) => void;
     style?: CSS.Properties;
 }
 
 const Button: React.FC<GWButtonProps> = ({ children, type, disabled, onClick, style }) => {
   return (
     <button
-        type='submit'
+        type={!onClick ? 'submit' : undefined}
         className={styles.btn} 
         disabled={!!disabled} 
+        onClick={onClick && onClick}
     >
         {children}
     </button>
