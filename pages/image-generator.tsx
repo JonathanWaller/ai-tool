@@ -2,9 +2,7 @@ import {FormEvent, useState} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import mainImage from '@/assets/images/ai-image.jpeg'
-
-import TypedText from '@/components/TypedText/TypedText';
+import mainImage from '@/assets/images/space-2.jpeg'
 
 const ImageGenerator = () => {
   const [result, setResult] = useState('');
@@ -45,6 +43,16 @@ const ImageGenerator = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.pageContainer}>
+        <div className={styles.bannerImageContainer}>
+          <Image
+              src={mainImage}
+              fill // will fill the container
+              alt='main img'
+              priority
+              className={styles.mainImage}
+            />
+        </div>
       <main className={styles.main}>
         <h1>JW AI</h1>
         <div className={styles.mainImageContainer}>
@@ -94,6 +102,7 @@ const ImageGenerator = () => {
         </div>
 
       </main>
+      </div>
     </>
   )
 }
