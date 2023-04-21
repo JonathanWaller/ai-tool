@@ -1,7 +1,10 @@
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.css';
 import Link from 'next/link';
+import type { NextPageWithLayout } from './_app';
 
-export default function Home() {
+import LayoutNoNav from '@/components/LayoutNoNav';
+
+const Home: NextPageWithLayout = () => {
 
   return (
     <div className={styles.glowContainer}>
@@ -16,3 +19,13 @@ export default function Home() {
     </div>
   )
 }
+
+Home.getLayout = function getLayout ( page ) {
+    return(
+        <LayoutNoNav>
+            {page}
+        </LayoutNoNav>
+    )
+}
+
+export default Home;

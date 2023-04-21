@@ -1,12 +1,5 @@
-import Nav from "./Nav/Nav";
-import styles from '@/styles/Layout.module.css'
-
-// const AppContainer = styled.div`
-//     padding: 100px;
-//     @media (max-width: ${breakpoints.sm}px) {
-//         padding: 50px;
-//      }
-// `
+import Banner from "./Banner";
+import Nav from "./Nav";
 
 interface Props {
     children: any;
@@ -14,11 +7,10 @@ interface Props {
 
 const Layout = ({children}: Props ) => {
     return(
-        // <div className={styles.appContainer}>
         <>
+            <Banner />
             <Nav />
             <main>{children}</main>
-        {/* </div> */}
         </>
     )
 }
