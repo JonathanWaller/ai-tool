@@ -5,6 +5,8 @@ import styles from '@/styles/Home.module.css'
 import mainImage from '@/assets/images/ai-image.jpeg'
 
 import TypedText from '@/components/TypedText/TypedText';
+import Input from '@/components/Input';
+import Button from '@/components/Button';
 
 const ChatResponse = () => {
     const [result, setResult] = useState('');
@@ -72,18 +74,8 @@ const ChatResponse = () => {
             <div className={styles.lowerContainer}>
               <form onSubmit={handleSubmit} className={styles.inputForm}>
                 <label>Ask a question...</label>
-                <input 
-                  name='prompt'
-                  placeholder='e.g. why is the sun hot'
-                  maxLength={100}
-                  autoComplete='off'
-                />
-                <button 
-                  type='submit'
-                  disabled={loading}
-                >
-                  Submit
-                </button>
+                <Input placeholder='e.g. why is the sun hot' name='prompt' />
+                <Button disabled={loading}>Submit</Button>
               </form>
             
             
@@ -98,7 +90,6 @@ const ChatResponse = () => {
               )}
     
             </div>
-    
           </main>
           </div>
         </>

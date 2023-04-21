@@ -4,6 +4,9 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import mainImage from '@/assets/images/space-2.jpeg'
 
+import Input from '@/components/Input';
+import Button from '@/components/Button';
+
 const ImageGenerator = () => {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
@@ -68,18 +71,8 @@ const ImageGenerator = () => {
         <div className={styles.lowerContainer}>
           <form onSubmit={handleSubmit} className={styles.inputForm}>
             <label>Enter a topic...</label>
-            <input 
-              name='prompt'
-              placeholder='e.g. baby seal'
-              maxLength={100}
-              autoComplete='off'
-            />
-            <button 
-              type='submit'
-              disabled={loading}
-            >
-              Submit
-            </button>
+            <Input placeholder='e.g. baby seal'name='prompt'/>
+            <Button disabled={loading}>Submit</Button>
           </form>
         
         

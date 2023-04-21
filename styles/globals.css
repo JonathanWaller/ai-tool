@@ -1,8 +1,8 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -16,6 +16,87 @@ body {
 
 body {
   background: #F5E5FC;
+}
+
+a {
+  text-decoration: none;
+} */
+
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url('../assets/fonts/Inter/static/Inter-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter SemiBold';
+  src: local('Inter SemiBold'), url('../assets/fonts/Inter/static/Inter-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter Bold';
+  src: local('Inter Bold'), url('../assets/fonts/Inter/static/Inter-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Inter ExtraBold';
+  src: local('Inter ExtraBold'), url('../assets/fonts/Inter/static/Inter-ExtraBold.ttf')
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: local('Orbitron'), url('../assets/fonts/Orbitron/static/Orbitron-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Orbitron ExtraBold';
+  src: local('Orbitron ExtraBold'), url('../assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf')
+}
+
+@font-face {
+  font-family: "Roboto Mono Regular";
+  src: local('Roboto Mono Regular'), url('../assets/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf')
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* background-color: black; */
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  /* max-width: 100vw; */
+  margin: 0;
+}
+body {
+  background: #F5E5FC;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* color: #ffffff; */
+  color: black;
+  font-size: 1.2em;
+  min-height: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a.no-underline {
+  text-decoration: none;
+}
+
+.inter-bold {
+  font-family: 'Inter Bold';
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
 }
 
 a {

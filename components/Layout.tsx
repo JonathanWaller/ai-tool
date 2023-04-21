@@ -1,4 +1,5 @@
 import Nav from "./Nav/Nav";
+import styles from '@/styles/Layout.module.css'
 
 // const AppContainer = styled.div`
 //     padding: 100px;
@@ -13,9 +14,11 @@ interface Props {
 
 const Layout = ({children}: Props ) => {
     return(
+        // <div className={styles.appContainer}>
         <>
             <Nav />
             <main>{children}</main>
+        {/* </div> */}
         </>
     )
 }
