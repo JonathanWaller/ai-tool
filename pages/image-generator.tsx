@@ -3,11 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import mainImage from '@/assets/images/space-2.jpeg'
+import type { NextPageWithLayout } from './_app'
 
+import Layout from '@/components/Layout';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
 
-const ImageGenerator = () => {
+const ImageGenerator: NextPageWithLayout = () => {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -57,7 +59,7 @@ const ImageGenerator = () => {
             />
         </div>
       <main className={styles.main}>
-        <h1>JW AI</h1>
+        <h1>Image Generator</h1>
         <div className={styles.mainImageContainer}>
           <Image
             src={mainImage}
@@ -97,6 +99,14 @@ const ImageGenerator = () => {
       </main>
       </div>
     </>
+  )
+}
+
+ImageGenerator.getLayout = function getLayout(page) {
+  return(
+    <Layout>
+      {page}
+    </Layout>
   )
 }
 
