@@ -4,6 +4,8 @@ This is a Next.js app using OpenAI.
 
 Work in progress...more to come!!
 
+![home-gif](https://user-images.githubusercontent.com/36019636/233745485-672363a5-37ef-4bc8-b932-3ccebd55d4e6.gif)
+
 
 https://user-images.githubusercontent.com/36019636/233197584-61bd1b38-8fff-4108-bcb0-6dde7e1fc8d6.mov
 
