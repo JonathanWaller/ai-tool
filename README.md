@@ -4,11 +4,10 @@ This is a Next.js app using OpenAI.
 
 Work in progress...more to come!!
 
-![home-gif](https://user-images.githubusercontent.com/36019636/233745485-672363a5-37ef-4bc8-b932-3ccebd55d4e6.gif)
+![main](https://user-images.githubusercontent.com/36019636/233761112-ad9ab2f6-35f4-4662-a7f3-1ecd0603ebb7.gif)
 
 
-https://user-images.githubusercontent.com/36019636/233197584-61bd1b38-8fff-4108-bcb0-6dde7e1fc8d6.mov
-
+![core](https://user-images.githubusercontent.com/36019636/233761114-76c7e82b-bed8-4587-89a8-d34c3f0bebc9.gif)
 
 
 ## Getting Started
