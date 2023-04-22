@@ -2,12 +2,12 @@ import {FormEvent, useState} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import mainImage from '@/assets/images/space-2.jpeg'
 import type { NextPageWithLayout } from './_app'
 
 import Layout from '@/components/Layout';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
+import Loader from '@/components/Loader';
 
 const ImageGenerator: NextPageWithLayout = () => {
   const [result, setResult] = useState('');
@@ -49,36 +49,20 @@ const ImageGenerator: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.pageContainer}>
-        <div className={styles.bannerImageContainer}>
-          <Image
-              src={mainImage}
-              fill // will fill the container
-              alt='main img'
-              priority
-              className={styles.mainImage}
-            />
-        </div>
       <main className={styles.main}>
-        <h1>Image Generator</h1>
-        <div className={styles.mainImageContainer}>
-          <Image
-            src={mainImage}
-            fill // will fill the container
-            alt='main img'
-            priority
-            className={styles.mainImage}
-          />
+        <div>
+          Enter a subject a receive a cartoon-ized version of the subject
         </div>
 
         <div className={styles.lowerContainer}>
           <form onSubmit={handleSubmit} className={styles.inputForm}>
-            <label>Enter a topic...</label>
+            {/* <label>Enter a topic...</label> */}
             <Input placeholder='e.g. baby seal'name='prompt'/>
             <Button disabled={loading}>Submit</Button>
           </form>
         
         
-          {loading && <div>loading</div>}
+          {loading && <div><Loader /></div>}
           {error && <div>Something went wrong. Please try again.</div>}
           {/* { result && <h5>{result}</h5>} */}
 

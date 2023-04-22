@@ -10,7 +10,7 @@
 }
 
 .container {
-    height: 450px;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -18,8 +18,8 @@
 }
 
 .loader {
-    border: 8px solid gray;
-    border-top: 8px solid #1A1F36;
+    border: 8px solid white;
+    border-top: 8px solid #df00fe;
     border-radius: 50%;
     height: 60px;
     width: 60px;

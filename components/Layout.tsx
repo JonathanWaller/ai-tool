@@ -9,7 +9,7 @@ const Layout = ({children}: Props ) => {
     return(
         <>
             <Banner />
-            <Nav />
+            {/* <Nav /> */}
             <main>{children}</main>
         </>
     )

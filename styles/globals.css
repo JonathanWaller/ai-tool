@@ -71,14 +71,13 @@ html {
   margin: 0;
 }
 body {
-  background: #F5E5FC;
+  background: black;
   overflow-x: hidden;
   margin: 0;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* color: #ffffff; */
-  color: black;
+  color: #ffffff;
   font-size: 1.2em;
   min-height: 100%;
 }

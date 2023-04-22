@@ -9,9 +9,6 @@ import Input from '@/components/Input';
 import Button from '@/components/Button';
 import Loader from '@/components/Loader';
 
-import { scrollIntoTheView } from '@/services';
-
-
 const ChatResponse: NextPageWithLayout = () => {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
@@ -24,8 +21,6 @@ const ChatResponse: NextPageWithLayout = () => {
     const prompt = formData.get('prompt')?.toString().trim(); // remove whitespace
   
     if( prompt ) {
-
-
       try {
         setResult('')
         setLoading( true );
@@ -43,14 +38,6 @@ const ChatResponse: NextPageWithLayout = () => {
     }
   }
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      scrollIntoTheView( 'top' )
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
-
 
   return (
     <div id="top">
@@ -61,51 +48,38 @@ const ChatResponse: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.pageContainer}>
-        {/* <div className={styles.bannerImageContainer}>
-        <Image
-            src={mainImage}
-            fill // will fill the container
-            alt='main img'
-            priority
-            className={styles.mainImage}
-          />
-        </div> */}
 
-      <main className={styles.main}>
-        <h1>Chat Response</h1>
-        {/* <div className={styles.mainImageContainer}>
-          <Image
-            src={mainImage}
-            fill // will fill the container
-            alt='main img'
-            priority
-            className={styles.mainImage}
-          />
-        </div> */}
+      <div className={styles.view}>
+      {/* <main className={styles.main}> */}
+        <div className={styles.columnLeft}>
+          <div>Chat Response</div>
+          <div>Ask a question and receive a response from the bot.</div>    
+          <div>The AI model has been trained to return a witty response based on your question.</div>
+        </div>
 
-        <div>
-          Ask a question and receive a response from the bot
-        </div>    
-
-        <div className={styles.lowerContainer}>
+        <div className={styles.columnRight}>
           <form onSubmit={handleSubmit} className={styles.inputForm}>
             <label>Ask a question...</label>
             <Input placeholder='e.g. why is the sun hot' name='prompt' />
             <Button disabled={loading}>Submit</Button>
           </form>
         
-        
-          {loading && <div><Loader /></div>}
-          {error && <div>Something went wrong. Please try again.</div>}
+          <div className={styles.outputContainer}>
+            <div className={styles.output}>Output</div>
+            {loading && <div style={{marginTop: '-20px'}}><Loader /></div>}
+            {error && <div>Something went wrong. Please try again.</div>}
 
-          {result && (
-            <h4>
-              <TypedText textStr={result} delay={100}/>
-            </h4>
-          )}
+            {result && (
+              <h4>
+                <TypedText textStr={result} delay={100}/>
+              </h4>
+            )}
+          </div>
+          
 
         </div>
-      </main>
+      {/* </main> */}
+      </div>
       </div>
     </div>
   ) 
