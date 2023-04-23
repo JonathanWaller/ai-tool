@@ -1,10 +1,13 @@
 .bannerContainer {
     position: relative;
-    top: -30px;
+    /* top: -30px; */
 }
 
 .pageContainer {
-    height: 100vh;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .view {
@@ -58,7 +61,7 @@
 }
 
 .bannerImageContainer {
-    position: relative;
+    /* position: relative; */
     /* margin: 2rem 0; */
     width: 100%;
     aspect-ratio: 12/7;
@@ -196,7 +199,7 @@
     opacity: 0.7;
     filter: blur(1em);
     transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-    background: var(--glow-color);
+    background: rgba(3, 191, 181, 0.9);
     pointer-events: none;
   }
 
@@ -224,7 +227,7 @@
     animation: none;
   }
 
-  .glowBtn:hover .faultyLetter {
+  .glowBtn:hover, .faultyLetter {
     animation: none;
     text-shadow: none;
     opacity: 1;
