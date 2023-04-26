@@ -1,0 +1,18 @@
+.bannerContainer {
+    position: relative;
+    /* top: -30px; */
+}
+
+.bannerImageContainer {
+    /* position: relative; */
+    /* margin: 2rem 0; */
+    width: 100%;
+    aspect-ratio: 12/7;
+    height: 600px;
+}
+
+.bannerImage {
+    object-fit: cover;
+    /* border-radius: 40px; */
+    box-shadow: 0 3px 8px rgb(0 0 0 / 24%);
+}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import mainImage from '@/assets/images/space-2.jpeg';
-import styles from '@/styles/Home.module.css'
+// import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Banner.module.css';
 
 import Nav from './Nav';
 
@@ -14,7 +15,7 @@ const Banner = () => {
                 fill // will fill the container
                 alt='main img'
                 priority
-                className={styles.mainImage}
+                className={styles.bannerImage}
                 />
             </div>
         </div>
