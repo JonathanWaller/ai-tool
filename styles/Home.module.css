@@ -1,8 +1,3 @@
-.bannerContainer {
-    position: relative;
-    /* top: -30px; */
-}
-
 .pageContainer {
     height: 80vh;
     display: flex;
@@ -58,14 +53,6 @@
     margin: auto;
     padding: 4rem 1rem;
     text-align: center;
-}
-
-.bannerImageContainer {
-    /* position: relative; */
-    /* margin: 2rem 0; */
-    width: 100%;
-    aspect-ratio: 12/7;
-    height: 600px;
 }
 
 .mainImageContainer {
