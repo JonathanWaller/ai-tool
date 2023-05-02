@@ -2,7 +2,6 @@ import {FormEvent, useState, useRef} from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
-import mainImage from '@/assets/images/space-2.jpeg'
 import type { NextPageWithLayout } from './_app'
 
 import Layout from '@/components/Layout';
@@ -17,7 +16,6 @@ const ImageVariation: NextPageWithLayout = () => {
 
   const [ uploadDisplay, setUploadDisplay] = useState<any>();
   const [ uploadFile, setUploadFile ] = useState<any>()
-//   const [ imageInput, setImageInput ] = useState<any>()
   const [ dragActive, setDragActive ] = useState<boolean>(false);
 
   const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
@@ -117,8 +115,6 @@ const ImageVariation: NextPageWithLayout = () => {
         }
     };
 
-    // console.log('upload file: ', uploadFile)
-
     /**
      * Triggers when file attach button is clicked, resulting in file directory to open
      * @param e A keyboard event
@@ -127,8 +123,6 @@ const ImageVariation: NextPageWithLayout = () => {
         e.preventDefault();
         inputRef?.current.click();
     }
-
-    // console.log('display: ', uploadDisplay)
 
   return (
     <>
