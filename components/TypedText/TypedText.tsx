@@ -35,18 +35,6 @@ const TypedText: React.FC<Props> = ({textStr, delay}) => {
                 ))
             }
         </div>
-
-        // <ul>
-        //     {
-        //         // converting the string to an array, mapping, and only displaying letters according to revealedLetters 
-        //         // adding an empty string to the front of the array to satisfy the directions of nothing showing initially
-        //         ['', ...textStr.split('')].map((str, ind) => (
-        //             str && ind <= revealedLetters
-        //             ? <li key={ind}>{str}</li>
-        //             : null
-        //         ))
-        //     }
-        // </ul>
     )
 }
 
